@@ -115,8 +115,7 @@ function renderCards(currentIdx, nextReset) {
   setAccent(card, current);
 
   document.getElementById('current-map-img').src = current.image;
-  document.getElementById('current-name').textContent = current.name;
-  document.getElementById('current-mode').textContent = `(${current.mode})`;
+  document.getElementById('current-name').textContent = `${current.name} (${current.mode})`;
   document.getElementById('reset-time').textContent =
     `Resets at ${formatLocalTime(nextReset)}`;
 }
