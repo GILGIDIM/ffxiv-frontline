@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FFXIV Frontline Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="header-title">
+        <span class="header-icon">⚔</span>
+        <h1>Frontline Tracker</h1>
+        <span class="header-sub">Final Fantasy XIV</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="current-map-section">
+        <div id="current-map-card" class="current-card">
+          <div class="map-hero" id="current-map-hero">
+            <img class="map-hero-img" id="current-map-img" src="" alt="Current Frontline map">
+            <div class="map-hero-content">
+              <span class="map-hero-label">Now in Rotation</span>
+              <div class="map-hero-name" id="current-name"></div>
+              <div class="map-hero-mode" id="current-mode"></div>
+            </div>
+          </div>
+          <div class="map-timer">
+            <div class="countdown-label">Changes in</div>
+            <div class="countdown" id="countdown">--:--:--</div>
+            <div class="countdown-reset" id="reset-time"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rotation-section">
+        <h2 class="section-title">Map Rotation</h2>
+        <ol class="rotation-list" id="rotation-list"></ol>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-info">
+        Maps rotate daily at <strong>15:00 UTC</strong> (16:00 BST)
+        <span class="tz-note" id="tz-note"></span>
+      </div>
+      <button class="calibrate-btn" id="calibrate-btn" title="Adjust rotation if the current map shown is incorrect">
+        Adjust Rotation
+      </button>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <h3>Adjust Rotation</h3>
+        <p>If the map shown doesn't match what's in-game, select the map that is <strong>currently</strong> active:</p>
+        <div class="calibrate-options" id="calibrate-options"></div>
+        <div class="modal-actions">
+          <button class="btn-secondary" id="modal-cancel">Cancel</button>
+          <button class="btn-primary" id="modal-save">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
